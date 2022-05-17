@@ -6,7 +6,7 @@
 /*   By: afaby <afaby@student.42angouleme.fr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/13 17:40:22 by afaby             #+#    #+#             */
-/*   Updated: 2022/05/13 17:50:11 by afaby            ###   ########.fr       */
+/*   Updated: 2022/05/17 17:37:00 by afaby            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,14 +15,52 @@
 
 # include "libft.h"
 
-typedef struct s_list
+typedef struct s_ll
 {
-	int				data;
-	struct s_list	*next;
-}	t_list;
+	int			data;
+	struct s_ll	*next;
+}	t_ll;
 
-// INIT_STACKS.C
+typedef struct s_stack
+{
+	t_ll	*first;
+}	t_stack;
+
+// PARSE.C
+
+t_ll	*parse_stack_one_argument(char *str);
+t_ll	*parse_stack_multi_arguments(int n, char **argv);
+
+// LST.C
+
+t_ll	*lstnew(int data);
+
+// PUSH.C
+
+void	pa(t_stack *a, t_stack *b);
+void	pb(t_stack *a, t_stack *b);
+
+// SWAP.C
 
 
+void	sa(t_stack *a);
+void	sb(t_stack *b);
+void	ss(t_stack *a, t_stack *b);
+
+// ROTATE.C
+
+void	ra(t_stack *a);
+void	rb(t_stack *b);
+void	rr(t_stack *a, t_stack *b);
+
+// REVERSE_ROTATE.C
+
+void	rra(t_stack *a);
+void	rrb(t_stack *b);
+void	rrr(t_stack *a, t_stack *b);
+
+// SORT.C
+
+void	sort(t_stack *a, t_stack *b);
 
 #endif

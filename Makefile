@@ -6,13 +6,20 @@
 #    By: afaby <afaby@student.42angouleme.fr>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/04/24 15:12:12 by afaby             #+#    #+#              #
-#    Updated: 2022/05/13 17:50:43 by afaby            ###   ########.fr        #
+#    Updated: 2022/05/17 17:36:44 by afaby            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = push_swap
 
-SRCS = main.c
+SRCS =	main.c \
+		parse.c \
+		lst.c \
+		push.c \
+		swap.c \
+		rotate.c \
+		reverse_rotate.c \
+		sort.c
 
 CC = gcc
 
