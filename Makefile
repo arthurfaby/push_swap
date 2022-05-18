@@ -6,7 +6,7 @@
 #    By: afaby <afaby@student.42angouleme.fr>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/04/24 15:12:12 by afaby             #+#    #+#              #
-#    Updated: 2022/05/17 17:36:44 by afaby            ###   ########.fr        #
+#    Updated: 2022/05/18 13:25:42 by afaby            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,8 @@ SRCS =	main.c \
 		swap.c \
 		rotate.c \
 		reverse_rotate.c \
-		sort.c
+		sort.c \
+		utils.c
 
 CC = gcc
 
@@ -34,14 +35,17 @@ RM = rm -f
 all: $(NAME)
 
 clean:
+#	make clean -C $(LIBFT)
 	$(RM)
 
 fclean: clean
+#	make fclean -C $(LIBFT)
 	$(RM) $(NAME)
 
 re: fclean all
 
 $(NAME):
+#	make -C $(LIBFT)
 	$(CC) -g $(SRCS) -o $(NAME) $(CFLAGS)
 
 .PHONY: all clean fclean re

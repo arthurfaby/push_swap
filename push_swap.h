@@ -6,7 +6,7 @@
 /*   By: afaby <afaby@student.42angouleme.fr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/13 17:40:22 by afaby             #+#    #+#             */
-/*   Updated: 2022/05/17 17:37:00 by afaby            ###   ########.fr       */
+/*   Updated: 2022/05/18 13:18:11 by afaby            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,6 +61,12 @@ void	rrr(t_stack *a, t_stack *b);
 
 // SORT.C
 
+int		lstsize(t_stack *a);
+int		find_max_value(t_stack *a);
 void	sort(t_stack *a, t_stack *b);
+
+// UTILS.C
+
+int		is_empty(t_stack *s);
 
 #endif
