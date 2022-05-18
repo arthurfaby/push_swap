@@ -6,7 +6,7 @@
 /*   By: afaby <afaby@student.42angouleme.fr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/17 17:29:19 by afaby             #+#    #+#             */
-/*   Updated: 2022/05/18 13:31:11 by afaby            ###   ########.fr       */
+/*   Updated: 2022/05/18 14:53:23 by afaby            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,22 +27,22 @@ int	lstsize(t_stack *a)
 	return (len);
 }
 
-int	find_max_value(t_stack *a)
+int	find_min_value(t_stack *a)
 {
 	t_ll	*tmp;
-	int		max;
+	int		min;
 
 	tmp = a->first;
-	max = tmp->data;
+	min = tmp->data;
 	while (tmp)
 	{
-		if (tmp->data > max)
-			max = tmp->data;
+		if (tmp->data < min)
+			min = tmp->data;
 		tmp = tmp->next;
 	}
-	return (max);
+	return (min);
 }
-
+/*
 void	sort(t_stack *a, t_stack *b)
 {
 	int		n_bytes_max;
@@ -59,7 +59,7 @@ void	sort(t_stack *a, t_stack *b)
 	while (max >> n_bytes_max)
 		n_bytes_max++;
 	tmp = a->first;
-	while (i < n_bytes_max)
+	while (i < n_bytes_max + 1)
 	{
 		j = 0;
 		while (j < len && !is_empty(a))
@@ -75,4 +75,20 @@ void	sort(t_stack *a, t_stack *b)
 			pa(a, b);
 		i++;
 	}
+}*/
+
+void	sort(t_stack *a, t_stack *b)
+{
+	int	min;
+
+	while (a->first)
+	{
+		min = find_min_value(a);
+		if (a->first->data == min)
+			pb(a, b);
+		else
+			ra(a);
+	}
+	while (b->first)
+		pa(a, b);
 }

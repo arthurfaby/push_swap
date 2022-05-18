@@ -6,7 +6,7 @@
 /*   By: afaby <afaby@student.42angouleme.fr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/13 17:35:01 by afaby             #+#    #+#             */
-/*   Updated: 2022/05/17 17:37:19 by afaby            ###   ########.fr       */
+/*   Updated: 2022/05/18 14:57:40 by afaby            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ int	main(int argc, char **argv)
 	else
 		a.first = parse_stack_multi_arguments(argc, argv);
 	b.first = NULL;
-	printlst(a.first, b.first);
+	//printlst(a.first, b.first);
 	sort(&a, &b);
-	printlst(a.first, b.first);
+	//printlst(a.first, b.first);
 }
