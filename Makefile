@@ -6,7 +6,7 @@
 #    By: afaby <afaby@student.42angouleme.fr>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/04/24 15:12:12 by afaby             #+#    #+#              #
-#    Updated: 2022/05/18 13:25:42 by afaby            ###   ########.fr        #
+#    Updated: 2022/05/25 15:01:30 by afaby            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,11 @@ SRCS =	main.c \
 		rotate.c \
 		reverse_rotate.c \
 		sort.c \
-		utils.c
+		sort_little.c \
+		utils.c \
+		ops.c \
+		free.c \
+		error.c
 
 CC = gcc
 

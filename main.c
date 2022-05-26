@@ -6,13 +6,13 @@
 /*   By: afaby <afaby@student.42angouleme.fr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/13 17:35:01 by afaby             #+#    #+#             */
-/*   Updated: 2022/05/18 14:57:40 by afaby            ###   ########.fr       */
+/*   Updated: 2022/05/25 16:55:40 by afaby            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	printlst(t_ll *a, t_ll *b)
+/*void	printlst(t_ll *a, t_ll *b)
 {
 	t_ll	*tmpa;
 	t_ll	*tmpb;
@@ -43,26 +43,69 @@ void	printlst(t_ll *a, t_ll *b)
 			ft_printf("\n");
 	}
 	ft_printf("----------------|----------------\n");
+}*/
+
+void	print_ops(t_ops *ops)
+{
+	while (ops)
+	{
+		if (*(ops->data) != '\0')
+			ft_printf("%s\n", ops->data);
+		ops = ops->next;
+	}
+}
+
+void	run(t_stack *a, t_stack *b, t_ops *ops)
+{
+	int	len;
+
+	b->first = NULL;
+	ops->next = NULL;
+	ops->data = "";
+	if (is_sorted(a))
+	{
+		free_all(a, b, ops);
+		return ;
+	}
+	len = lstsize(a);
+	if (len == 2)
+		sa(a, ops, 1);
+	else if (len == 3)
+		sort_three(a, ops);
+	else if (len == 4)
+		sort_four(a, b, ops);
+	else if (len == 5)
+		sort_five(a, b, ops);
+	else
+		sort(a, b, ops);
+	opti_ops(ops);
+	print_ops(ops);
+	free_all(a, b, ops);
 }
 
 int	main(int argc, char **argv)
 {
 	t_stack	a;
 	t_stack	b;
+	t_ops	ops;
 
 	if (argc < 2)
-		return (ft_printf("%s (\"args\" or <args>)\n", argv[0])); // NOT ENOUGH ARGS
+		return (ft_printf("%s (\"args\" or <args>)\n", argv[0]));
 	if (argc == 2)
 	{
-		//if (check_one_arg(argv[1]))
-		a.first = parse_stack_one_argument(argv[1]);
-		//else
-		//	return (0); //ERROR IN ARG
+		if (check_one_argument(argv[1]))
+			a.first = parse_stack_one_argument(argv[1]);
+		else
+			return (ft_printf("Error\n"));
 	}
-	else
+	else if (check_multi_arguments(argv))
 		a.first = parse_stack_multi_arguments(argc, argv);
-	b.first = NULL;
-	//printlst(a.first, b.first);
-	sort(&a, &b);
-	//printlst(a.first, b.first);
+	else
+		return (ft_printf("Error\n"));
+	if (!check_duplicate(&a))
+	{
+		free_stack(a.first);
+		return (ft_printf("Error\n"));
+	}
+	run(&a, &b, &ops);
 }

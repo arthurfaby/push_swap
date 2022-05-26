@@ -1,35 +1,47 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push.c                                             :+:      :+:    :+:   */
+/*   free.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: afaby <afaby@student.42angouleme.fr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/17 15:41:10 by afaby             #+#    #+#             */
-/*   Updated: 2022/05/25 16:56:38 by afaby            ###   ########.fr       */
+/*   Created: 2022/05/25 10:42:13 by afaby             #+#    #+#             */
+/*   Updated: 2022/05/25 16:56:00 by afaby            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	pa(t_stack *a, t_stack *b, t_ops *ops)
+void	free_stack(t_ll *first)
 {
 	t_ll	*tmp;
+	t_ll	*old;
 
-	tmp = a->first;
-	a->first = b->first;
-	b->first = b->first->next;
-	a->first->next = tmp;
-	opsaddback(&ops, opnew("pa"));
+	tmp = first;
+	while (tmp)
+	{
+		old = tmp;
+		tmp = tmp->next;
+		free(old);
+	}
 }
 
-void	pb(t_stack *a, t_stack *b, t_ops *ops)
+void	free_ops(t_ops *ops)
 {
-	t_ll	*tmp;
+	t_ops	*old;
 
-	tmp = b->first;
-	b->first = a->first;
-	a->first = a->first->next;
-	b->first->next = tmp;
-	opsaddback(&ops, opnew("pb"));
+	ops = ops->next;
+	while (ops)
+	{
+		old = ops;
+		ops = ops->next;
+		free(old);
+	}
+}
+
+void	free_all(t_stack *a, t_stack *b, t_ops *ops)
+{
+	free_stack(a->first);
+	free_stack(b->first);
+	free_ops(ops);
 }

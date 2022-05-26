@@ -6,13 +6,13 @@
 /*   By: afaby <afaby@student.42angouleme.fr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/17 16:53:10 by afaby             #+#    #+#             */
-/*   Updated: 2022/05/17 17:28:28 by afaby            ###   ########.fr       */
+/*   Updated: 2022/05/25 16:56:55 by afaby            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ra(t_stack *a)
+void	ra(t_stack *a, t_ops *ops, int add)
 {
 	t_ll	*tmp;
 	t_ll	*tmp2;
@@ -24,10 +24,11 @@ void	ra(t_stack *a)
 		tmp2 = tmp2->next;
 	tmp2->next = tmp;
 	tmp->next = NULL;
-	ft_printf("ra\n");
+	if (add)
+		opsaddback(&ops, opnew("ra"));
 }
 
-void	rb(t_stack *b)
+void	rb(t_stack *b, t_ops *ops, int add)
 {
 	t_ll	*tmp;
 	t_ll	*tmp2;
@@ -39,12 +40,13 @@ void	rb(t_stack *b)
 		tmp2 = tmp2->next;
 	tmp2->next = tmp;
 	tmp->next = NULL;
-	ft_printf("rb\n");
+	if (add)
+		opsaddback(&ops, opnew("rb"));
 }
 
-void	rr(t_stack *a, t_stack *b)
+void	rr(t_stack *a, t_stack *b, t_ops *ops)
 {
-	ra(a);
-	rb(b);
-	ft_printf("rr\n");
+	ra(a, ops, 0);
+	rb(b, ops, 0);
+	opsaddback(&ops, opnew("rr"));
 }
