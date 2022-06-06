@@ -6,7 +6,7 @@
 #    By: afaby <afaby@student.42angouleme.fr>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/04/24 15:12:12 by afaby             #+#    #+#              #
-#    Updated: 2022/05/25 15:01:30 by afaby            ###   ########.fr        #
+#    Updated: 2022/06/05 11:53:12 by afaby            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,6 +26,8 @@ SRCS =	main.c \
 		free.c \
 		error.c
 
+OBJS =	$(SRCS:.c=.o)
+
 CC = gcc
 
 INCS = .
@@ -38,18 +40,21 @@ RM = rm -f
 
 all: $(NAME)
 
+.c.o:
+	$(CC) $(CFLAGS) -c $< -o $@
+
 clean:
-#	make clean -C $(LIBFT)
-	$(RM)
+	$(RM) $(OBJS)
+	make clean -C $(LIBFT)
 
 fclean: clean
-#	make fclean -C $(LIBFT)
+	make fclean -C $(LIBFT)
 	$(RM) $(NAME)
 
 re: fclean all
 
-$(NAME):
-#	make -C $(LIBFT)
-	$(CC) -g $(SRCS) -o $(NAME) $(CFLAGS)
+$(NAME): $(OBJS)
+	make -C $(LIBFT)
+	$(CC) $(OBJS) -o $(NAME) $(CFLAGS)
 
 .PHONY: all clean fclean re

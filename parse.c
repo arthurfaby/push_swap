@@ -6,7 +6,7 @@
 /*   By: afaby <afaby@student.42angouleme.fr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/17 14:08:46 by afaby             #+#    #+#             */
-/*   Updated: 2022/05/25 16:55:11 by afaby            ###   ########.fr       */
+/*   Updated: 2022/06/06 09:34:53 by afaby            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,8 +65,6 @@ t_ll	*parse_stack_one_argument(char *str)
 
 	i = 0;
 	args = ft_split(str, ' ');
-	if (!args)
-		return (0);
 	a = lstnew(ft_atoi(args[i++]));
 	temp = a;
 	while (args[i])

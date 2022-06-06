@@ -6,44 +6,11 @@
 /*   By: afaby <afaby@student.42angouleme.fr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/13 17:35:01 by afaby             #+#    #+#             */
-/*   Updated: 2022/05/25 16:55:40 by afaby            ###   ########.fr       */
+/*   Updated: 2022/06/05 13:25:30 by afaby            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-/*void	printlst(t_ll *a, t_ll *b)
-{
-	t_ll	*tmpa;
-	t_ll	*tmpb;
-
-	tmpa = a;
-	tmpb = b;
-	ft_printf("----------------|----------------\n");
-	ft_printf("|    STACK A    |    STACK B    |\n");
-	ft_printf("----------------|----------------\n");
-	while (tmpa || tmpb)
-	{
-		if (tmpa)
-		{	
-			if (tmpa->data > 9999999 || tmpa->data < -999999)
-				ft_printf("%d\t|", tmpa->data);
-			else
-				ft_printf("%d\t\t|", tmpa->data);
-			tmpa = tmpa->next;
-		}
-		else
-			ft_printf("\t\t|");
-		if (tmpb)
-		{
-			ft_printf("%d\n", tmpb->data);
-			tmpb = tmpb->next;
-		}
-		else
-			ft_printf("\n");
-	}
-	ft_printf("----------------|----------------\n");
-}*/
 
 void	print_ops(t_ops *ops)
 {
@@ -108,4 +75,5 @@ int	main(int argc, char **argv)
 		return (ft_printf("Error\n"));
 	}
 	run(&a, &b, &ops);
+	return (0);
 }

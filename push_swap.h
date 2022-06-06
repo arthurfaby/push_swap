@@ -6,7 +6,7 @@
 /*   By: afaby <afaby@student.42angouleme.fr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/13 17:40:22 by afaby             #+#    #+#             */
-/*   Updated: 2022/05/25 17:08:10 by afaby            ###   ########.fr       */
+/*   Updated: 2022/06/05 11:27:18 by afaby            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,6 @@ void	pa(t_stack *a, t_stack *b, t_ops *ops);
 void	pb(t_stack *a, t_stack *b, t_ops *ops);
 
 // SWAP.C
-
 
 void	sa(t_stack *a, t_ops *ops, int add);
 void	sb(t_stack *b, t_ops *ops, int add);
