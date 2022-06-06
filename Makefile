@@ -6,7 +6,7 @@
 #    By: afaby <afaby@student.42angouleme.fr>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/04/24 15:12:12 by afaby             #+#    #+#              #
-#    Updated: 2022/06/05 11:53:12 by afaby            ###   ########.fr        #
+#    Updated: 2022/06/06 13:28:10 by afaby            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -41,7 +41,7 @@ RM = rm -f
 all: $(NAME)
 
 .c.o:
-	$(CC) $(CFLAGS) -c $< -o $@
+	$(CC) -g $(CFLAGS) -c $< -o $@
 
 clean:
 	$(RM) $(OBJS)

@@ -6,7 +6,7 @@
 /*   By: afaby <afaby@student.42angouleme.fr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/25 14:47:49 by afaby             #+#    #+#             */
-/*   Updated: 2022/06/06 09:35:40 by afaby            ###   ########.fr       */
+/*   Updated: 2022/06/06 13:29:18 by afaby            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,11 @@ int	check_one_argument(char *arg)
 	if (!arg || !*arg)
 		return (0);
 	args = ft_split(arg, ' ');
+	if (!args || !*args)
+	{
+		ft_free_double_pointer((void **)args);
+		return (0);
+	}
 	while (args[i])
 	{
 		if (!valid_arg(args[i]))
