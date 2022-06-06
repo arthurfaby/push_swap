@@ -6,7 +6,7 @@
 #    By: afaby <afaby@student.42angouleme.fr>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/04/10 19:07:12 by afaby             #+#    #+#              #
-#    Updated: 2022/04/29 17:31:31 by afaby            ###   ########.fr        #
+#    Updated: 2022/05/25 14:59:17 by afaby            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -58,7 +58,8 @@ OUTPUT =	ft_putchar.c \
 
 OTHER  =	ft_itoa.c \
 			ft_atoi.c \
-			ft_atoi_base.c
+			ft_atoi_base.c \
+			ft_atol.c
 
 LL     =	ft_lstnew.c \
 			ft_lstadd_front.c \

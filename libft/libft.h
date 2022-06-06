@@ -6,7 +6,7 @@
 /*   By: afaby <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/28 11:56:47 by afaby             #+#    #+#             */
-/*   Updated: 2022/05/10 15:36:30 by afaby            ###   ########.fr       */
+/*   Updated: 2022/05/25 14:59:35 by afaby            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,6 +91,7 @@ int		ft_printf(const char *s, ...);
 char	*ft_itoa(int n);
 int		ft_atoi_base(char *str, char *base);
 int		ft_atoi(const char *nptr);
+long	ft_atol(const char *nptr);
 
 // LINKED LISTS FUNCTIONS
 
