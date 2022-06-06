@@ -6,7 +6,7 @@
 /*   By: afaby <afaby@student.42angouleme.fr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/13 17:35:01 by afaby             #+#    #+#             */
-/*   Updated: 2022/06/05 13:25:30 by afaby            ###   ########.fr       */
+/*   Updated: 2022/06/06 10:45:19 by afaby            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ int	main(int argc, char **argv)
 	t_ops	ops;
 
 	if (argc < 2)
-		return (ft_printf("%s (\"args\" or <args>)\n", argv[0]));
+		return (0);
 	if (argc == 2)
 	{
 		if (check_one_argument(argv[1]))
